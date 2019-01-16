@@ -7,7 +7,6 @@ const Header = () => {
                 .title {
                     color:skyblue;
                     padding-top:30px;
-                    padding-bottom:20px;
                     font-size:5em;
                     display:flex;
                     justify-content:center;

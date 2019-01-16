@@ -1,13 +1,17 @@
+import Link from 'next/link'
+import { Button } from 'reactstrap';
+
 const AsteroidTable = (props) => {
     const asteroidData = props.neoData
     const meteorData = asteroidData.map((asteroid) => {
         return (
             <tr key={asteroid.id}>
                 <td className="table-cell"><p className="table-name">{asteroid.name}</p></td>
-                <td className="table-cell"><p className="table-size">{Math.round(asteroid.estimated_diameter.feet.estimated_diameter_max - asteroid.estimated_diameter.feet.estimated_diameter_min)}</p></td>
-                <td className="table-cell"><p className="table-speed">{Math.round(asteroid.close_approach_data[0].relative_velocity.miles_per_hour)}</p></td>
+                <td className="table-cell"><p className="table-size">{Math.round(asteroid.estimated_diameter.feet.estimated_diameter_min)} - {Math.round(asteroid.estimated_diameter.feet.estimated_diameter_max)} ft.</p></td>
+                <td className="table-cell"><p className="table-speed">{Math.round(asteroid.close_approach_data[0].relative_velocity.miles_per_hour)} MPH</p></td>
                 <td className="table-cell"><p className="table-mag">{asteroid.absolute_magnitude_h}</p></td>
-                <td className="table-cell"><p className="table-dangerous">{asteroid.is_potentially_hazardous_asteroid ? 'Yes...' : 'Nah'}</p></td>
+                <td className="table-cell"><p className="table-dangerous">{asteroid.is_potentially_hazardous_asteroid ? 'YES' : 'NAH'}</p></td>
+                <td className="table-cell"><Button outline color="info"><a href={asteroid.nasa_jpl_url}>See More</a></Button></td>
                 <style jsx>{`
                     td{
                         padding:35px 0px;
@@ -16,7 +20,7 @@ const AsteroidTable = (props) => {
 
                     .table-cell{
                         color:whitesmoke;
-                        font-size:1.3em;
+                        font-size:1.5em;
                         font-weight:550;
                     }
 
@@ -29,9 +33,17 @@ const AsteroidTable = (props) => {
                         font-weight:650;
                         font-size:1.1em;
                     }
+
+                    a {
+                        color:whitesmoke;
+                    }
+
+                    a:hover {
+                        text-decoration:none;
+                    }
                 `}
                 </style>
-            </tr>
+            </tr >
         )
     })
     console.log(props.neoData)
@@ -44,6 +56,7 @@ const AsteroidTable = (props) => {
                     <th><p className="table-header">Velocity</p></th>
                     <th><p className="table-header">Magnitude</p></th>
                     <th><p className="table-header">Potentially Dangerous</p></th>
+                    <th><p className="table-header">NASA Link</p></th>
                 </tr>
             </thead>
             <tbody>
@@ -54,9 +67,9 @@ const AsteroidTable = (props) => {
                     color:whitesmoke;
                     text-align:center;
                     text-decoration:underline;
-                    padding: 35px 0;
+                    padding: 30px 0;
                     font-weight:750;
-                    font-size:1.4em;
+                    font-size:28px;
                 }
             `}</style>
         </table>

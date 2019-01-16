@@ -7,15 +7,20 @@ const Index = (props) => {
     return (
         < Layout >
             <div>
-                <div>
-                    <h2>Peek behind the curtain?</h2><br />
-                    <Link href="/about"><a>Here</a></Link>
-                    <AsteroidTable neoData={props.neoData} />
+                <div className="container description">
+                    <h2>Peek behind the curtain?</h2>
                 </div>
+                <AsteroidTable neoData={props.neoData} />
+                <Link href="/about"><a>Here</a></Link>
             </div>
 
             <style jsx>{`
-
+                .description {
+                    height:20vh;
+                    display:flex;
+                    justify-content:space-around;
+                    align-items:center;
+                }
             `}</style>
         </Layout >
     )
