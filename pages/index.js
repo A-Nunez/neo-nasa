@@ -1,27 +1,15 @@
 import Layout from '../components/Layout';
 import AsteroidTable from '../components/AsteroidTable';
+import Description from '../components/Description'
 import Fetch from 'isomorphic-unfetch'
-import Link from 'next/link'
 
 const Index = (props) => {
     return (
         < Layout >
             <div>
-                <div className="container description">
-                    <h2>Peek behind the curtain?</h2>
-                </div>
+                <Description />
                 <AsteroidTable neoData={props.neoData} />
-                <Link href="/about"><a>Here</a></Link>
             </div>
-
-            <style jsx>{`
-                .description {
-                    height:20vh;
-                    display:flex;
-                    justify-content:space-around;
-                    align-items:center;
-                }
-            `}</style>
         </Layout >
     )
 }
