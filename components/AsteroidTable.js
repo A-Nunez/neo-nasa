@@ -10,7 +10,7 @@ const AsteroidTable = (props) => {
                 <td className="table-cell"><p className="table-speed">{Math.round(asteroid.close_approach_data[0].relative_velocity.miles_per_hour)} MPH</p></td>
                 <td className="table-cell"><p className="table-mag">{asteroid.absolute_magnitude_h}</p></td>
                 <td className="table-cell"><p className="table-dangerous">{asteroid.is_potentially_hazardous_asteroid ? 'YES' : 'NAH'}</p></td>
-                <td className="table-cell"><a href={asteroid.nasa_jpl_url}><Button outline color="info">See More</Button></a></td>
+                <td className="table-cell"><a href={asteroid.nasa_jpl_url}><Button outline color={asteroid.is_potentially_hazardous_asteroid ? 'danger' : 'info'}>See More</Button></a></td>
                 <style jsx>{`
                     td{
                         padding:35px 0px;

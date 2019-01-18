@@ -19,7 +19,7 @@ const Description = () => {
                 <span id="p-button"><Button>Kick machine?</Button></span>
                 <h2 id="summary">I am the Great All Knowing Space Machine. I crash landed here on Earth from my home planet thousands of years ago. My people have the ability to see every single asteroid that will orbit around
                 this planet everyday. I can show you if they're dangerous or their speed or--<br /><br /> You know what... Here, take a look.</h2>
-                <span id="peek-button"><Button id="look-btn" onClick={break_machine} color="danger">Kick machine?</Button></span>
+                <span id="peek-button"><Button id="look-btn" onClick={break_machine} outline color="success">Kick machine?</Button></span>
             </div>
             <style jsx>{`
                 #description {
